@@ -1,5 +1,5 @@
 Name:           goaccess
-Version:        0.9.8
+Version:        1.2
 Release:        1
 Summary:        Real-time web log analyzer and interactive viewer
 License:        GPLv2+
@@ -65,6 +65,7 @@ autoreconf -fiv
 
 %files
 %doc AUTHORS ChangeLog README TODO COPYING
+%doc %{_docdir}/%{name}/*
 %config(noreplace) %{_sysconfdir}/%{name}.conf
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
