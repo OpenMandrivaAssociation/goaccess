@@ -65,6 +65,7 @@ autoreconf -fiv
 
 %files
 %doc AUTHORS ChangeLog README TODO COPYING
+%doc %{_docdir}/%{name}/*
 %config(noreplace) %{_sysconfdir}/%{name}.conf
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
