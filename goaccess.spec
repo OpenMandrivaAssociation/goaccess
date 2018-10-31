@@ -1,6 +1,6 @@
 Name:           goaccess
 Version:        1.2
-Release:        1
+Release:        2
 Summary:        Real-time web log analyzer and interactive viewer
 License:        GPLv2+
 URL:            http://goaccess.io/
