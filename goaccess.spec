@@ -1,6 +1,6 @@
 Name:           goaccess
-Version:        1.2
-Release:        2
+Version:        1.4.1
+Release:        1
 Summary:        Real-time web log analyzer and interactive viewer
 License:        GPLv2+
 URL:            http://goaccess.io/
@@ -54,18 +54,19 @@ not limited to:
 # Prevent flags being overridden again and again.
 #sed -i 's|-pthread|$CFLAGS \0|' configure.ac
 sed -i '/-pthread/d' configure.ac
+autoreconf -fiv
+%configure --enable-debug --enable-utf8
 
 %build
-autoreconf -fiv
-%configure --enable-debug --enable-geoip --enable-utf8
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
+%find_lang goaccess
 
-%files
+%files -f goaccess.lang
 %doc AUTHORS ChangeLog README TODO COPYING
-%doc %{_docdir}/%{name}/*
-%config(noreplace) %{_sysconfdir}/%{name}.conf
+%dir %{_sysconfdir}/goaccess
+%config(noreplace) %{_sysconfdir}/goaccess/*
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
