@@ -7,6 +7,7 @@ URL:            http://goaccess.io/
 Source0:        http://tar.goaccess.io/goaccess-%{version}.tar.gz
 BuildRequires:  autoconf
 BuildRequires:  automake
+BuildRequires:	gettext
 BuildRequires:  geoip-devel
 BuildRequires:  ncurses-devel
 
