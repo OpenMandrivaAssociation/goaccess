@@ -1,15 +1,15 @@
 Name:           goaccess
-Version:        1.4.1
+Version:        1.5.5
 Release:        1
 Summary:        Real-time web log analyzer and interactive viewer
 License:        GPLv2+
 URL:            http://goaccess.io/
 Source0:        http://tar.goaccess.io/goaccess-%{version}.tar.gz
-BuildRequires:  autoconf
-BuildRequires:  automake
-BuildRequires:	gettext
-BuildRequires:  geoip-devel
-BuildRequires:  ncurses-devel
+BuildRequires:  pkgconfig(libmaxminddb)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(ncurses)
+BuildRequires:  pkgconfig(ncursesw)
+
 
 %description
 GoAccess is a real-time web log analyzer and interactive viewer that runs in a
@@ -52,11 +52,7 @@ not limited to:
 
 %prep
 %setup -q
-# Prevent flags being overridden again and again.
-#sed -i 's|-pthread|$CFLAGS \0|' configure.ac
-sed -i '/-pthread/d' configure.ac
-autoreconf -fiv
-%configure --enable-debug --enable-utf8
+%configure --enable-debug --enable-geoip=mmdb --enable-utf8
 
 %build
 %make_build
