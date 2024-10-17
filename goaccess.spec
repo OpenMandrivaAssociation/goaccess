@@ -3,7 +3,7 @@ Version:	1.9.1
 Release:	1
 Summary:        Real-time web log analyzer and interactive viewer
 License:        GPLv2+
-URL:            http://goaccess.io/
+URL:            https://goaccess.io/
 Source0:        http://tar.goaccess.io/goaccess-%{version}.tar.gz
 BuildRequires:  pkgconfig(libmaxminddb)
 BuildRequires:  pkgconfig(glib-2.0)
