@@ -5,6 +5,11 @@ Summary:        Real-time web log analyzer and interactive viewer
 License:        GPLv2+
 URL:            https://goaccess.io/
 Source0:        http://tar.goaccess.io/goaccess-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  pkgconfig(libmaxminddb)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(ncurses)
